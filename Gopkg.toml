@@ -1,0 +1,23 @@
+[prune]
+  go-tests = true
+  unused-packages = true
+
+[[constraint]]
+  name = "github.com/grpc-ecosystem/go-grpc-prometheus"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/prometheus/client_golang"
+  branch = "master"
+
+[[constraint]]
+  name = "google.golang.org/grpc"
+  branch = "master"
+
+[[constraint]]
+  name = "go.uber.org/zap"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/googleapis/googleapis"
+  branch = "master"

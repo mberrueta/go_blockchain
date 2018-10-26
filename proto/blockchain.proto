@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package proto;
+
+// https://grpc.io/blog/coreos
+// https://github.com/grpc-ecosystem/grpc-gateway
+// protoc -I/usr/local/include -I. \
+//   -I$GOPATH/src \
+//   -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
+//   --go_out=plugins=grpc:. \
+//   ./proto/blockchain.proto
+import "google/api/annotations.proto";
+
+service Blockchain {
+  rpc Add(AddBlockRequest) returns (AddBlockResponse) {
+    option (google.api.http) = {
+        post: "/blocks"
+    };
+  }
+  rpc List(GetBlockRequest) returns (GetBlockResponse) {
+    option (google.api.http) = {
+        get: "/blocks"
+    };
+  }
+}
+message AddBlockRequest {
+  string data           = 1;
+  string verification   = 2;
+}
+
+message AddBlockResponse {
+  string hash = 1;
+}
+
+message GetBlockRequest {}
+
+message GetBlockResponse {
+  repeated Block blocks = 1;
+}
+
+message Block {
+  string prevBlockHash  = 1;
+  string data           = 2;
+  string hash           = 3;
+  string verification   = 4;
+}
