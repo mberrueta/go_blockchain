@@ -4,9 +4,9 @@ package proto;
 
 // https://grpc.io/blog/coreos
 // https://github.com/grpc-ecosystem/grpc-gateway
-// protoc -I/usr/local/include -I. \
-//   -I$GOPATH/src \
-//   -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
+// protoc \
+//   -I. \
+//   -I$GOPATH/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
 //   --go_out=plugins=grpc:. \
 //   ./proto/blockchain.proto
 import "google/api/annotations.proto";
