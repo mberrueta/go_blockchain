@@ -1,3 +1,4 @@
+// Package server handles the Server implementation
 package server
 
 import (

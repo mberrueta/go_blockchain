@@ -1,3 +1,4 @@
+// Package metrics provides simple implementation to add metrics to prometheus
 package metrics
 
 import (

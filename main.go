@@ -1,3 +1,4 @@
+// Package main handle the blockchain server execution
 package main
 
 // Grpc tutorial
@@ -13,17 +14,12 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/grpc-ecosystem/go-grpc-prometheus"
 	"github.com/mberrueta/test1/blockchain"
 	"github.com/mberrueta/test1/proto"
 	"github.com/mberrueta/test1/server"
-	// "golang.org/x/net/context"
-	"github.com/grpc-ecosystem/go-grpc-prometheus"
-	// "github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"google.golang.org/grpc"
-	// pb "github.com/grpc-ecosystem/go-grpc-prometheus/examples/grpc-server-with-prometheus/protobuf"
-	// "github.com/prometheus/client_golang/prometheus"
-	// "github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 func main() {
@@ -65,12 +61,10 @@ func startHTTP() {
 		MaxHeaderBytes: 1 << 20,
 	}
 
-	// go func() {
 	err := srv.ListenAndServe()
 	if err == http.ErrServerClosed {
 		err = nil
 	}
 
 	fmt.Printf("listen port: %v\n", "9999")
-	// }()
 }
