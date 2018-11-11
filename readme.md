@@ -1,5 +1,10 @@
 # block chain go example
 
+Based in
+
+- https://github.com/plutov/packagemain
+- https://www.youtube.com/watch?v=gju-bml4kdw
+
 ## structure
 
 ```shell
@@ -48,4 +53,12 @@ go build ./client/main.go
 go run ./client/main.go -add=asd,888
 go run ./client/main.go -list
 
+```
+
+## paths
+
+```shell
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 ```
