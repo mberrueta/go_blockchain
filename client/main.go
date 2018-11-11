@@ -1,3 +1,4 @@
+// Package main (client) provide a client to call the blockchain
 package main
 
 import (

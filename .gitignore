@@ -1,3 +1,4 @@
 vendor/
 *.lock
 proto/blockchain.pb.go
+debug
